@@ -1,6 +1,22 @@
 """List of prime numbers generator."""
 """ENTER YOUR SOLUTION HERE!"""
+import math as m
 
 def primes(number_of_primes):
     list = []
+    counter = 4
+
+    if number_of_primes < 1:
+        return []
+    elif number_of_primes == 1:
+        return [2]
+    while len(list) < number_of_primes:
+        isPrime = True
+        for i in range(2, int(m.sqrt(counter))):
+            if counter % i == 0:
+                isPrime = False
+                break
+        if isPrime:
+            list.append(counter)
+            counter += 1
     return list
